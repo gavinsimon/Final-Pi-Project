@@ -1,0 +1,59 @@
+####################################################################################
+# Name: Gavin Simon, Luke Tucker, Colby Austin, and Matthew Rice
+# Date: 4/27/17
+# Assignment: Constellations
+####################################################################################
+
+from Tkinter import *
+import random
+#allows correct list to be shuffled
+from random import shuffle
+
+#sets the colors to be used
+colors = ["blue", "red", "yellow", "white", "orange"]
+#sets the correct responses to be compared to as a random generation of colors
+correct = ["blue", "red", "yellow", "white", "orange"]
+shuffle(correct)
+#prints shuffled colors list
+print correct
+
+#gets player responses
+responses = ["red", "blue", "yellow", "orange", "white"]
+
+#class for GUI
+class Gooey(Frame):
+    def __init__(self, master):
+        Frame.__init__(self, master)
+        self.master = master
+
+    def setUpGooey(self):
+        #where image will be
+        img = Label(self.master, text = "PLACE IMAGE HERE")
+        img.grid(row = 1, column = 1, columnspan = 5, sticky = E+W)
+        
+        #sets up user entries
+        e1 = Entry(self.master)
+        e1.grid(row = 6, column = 1)
+
+        e2 = Entry(self.master)
+        e2.grid(row = 6, column = 2)
+        
+        e3 = Entry(self.master)
+        e3.grid(row = 6, column = 3)
+        
+        e4 = Entry(self.master)
+        e4.grid(row = 6, column = 4)
+        
+        e5 = Entry(self.master)
+        e5.grid(row = 6, column = 5)
+
+        #button for hints??
+        b1 = Button(self.master, text = "Only press if you suck")
+        b1.grid(row = 7, column = 3, sticky = E+W)
+        
+
+#variables for GUI
+window = Tk()
+t = Gooey(window)
+t.setUpGooey()
+window.mainloop()
